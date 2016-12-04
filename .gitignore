@@ -4,8 +4,8 @@
 /.crystal/
 /.shards/
 
+sample.bundle
 
 # Libraries don't need dependency lock
 # Dependencies will be locked in application that uses them
 /shard.lock
-
