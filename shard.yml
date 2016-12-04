@@ -1,0 +1,10 @@
+name: ruby_exts
+version: 0.1.0
+
+authors:
+  - Santiago Palladino <spalladino@gmail.com>
+
+
+crystal: 0.19.4
+
+license: MIT
