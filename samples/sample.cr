@@ -1,7 +1,7 @@
 require "../src/ruby_exts"
 require "http/client"
 
-# Sample method
+# Sample global method
 RubyExts.global_def "get", 1, ->(obj : LibRuby::VALUE, rburl : LibRuby::VALUE) do
   begin
     url = String.from_ruby(rburl)
@@ -11,6 +11,11 @@ RubyExts.global_def "get", 1, ->(obj : LibRuby::VALUE, rburl : LibRuby::VALUE) d
     puts "Exception in get: #{ex}"
     "".to_ruby
   end
+end
+
+# Sample global method but using macros, expands to the one above
+RubyExts.ruby_global_def("macro_get", url : String) do
+  HTTP::Client.get(url).body
 end
 
 # Sample Crystal class to be wrapped as a Ruby class
@@ -45,6 +50,10 @@ Ruby::Class.new("Coco").tap do |c|
   c.def "size", 0, ->(self : LibRuby::VALUE) do
     # Delegate a simple method to Coco, and wrap the return value as a Ruby value
     Coco.unwrap(self).size.to_ruby
+  end
+
+  c.def "noop", 0, ->(self : LibRuby::VALUE) do
+    nil.to_ruby
   end
 end
 
