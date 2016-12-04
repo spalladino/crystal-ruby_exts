@@ -2,7 +2,7 @@
 
 Write Ruby extensions in Crystal. Built from [this gist](https://gist.github.com/spalladino/10c829db3191a89a8ba73bb001d3c921), based upon [manastech/crystal_ruby](https://github.com/manastech/crystal_ruby).
 
-Works with Crystal 0.19.4 and Ruby 2.3.1 on OSX El Capitan, though might work for other versions.
+Works with Crystal 0.20.0 and Ruby 2.3.1 on OSX El Capitan, though might work for other versions.
 
 **Work in progress.**
 
@@ -33,6 +33,16 @@ irb(main):003:0> get "https://raw.githubusercontent.com/manastech/crystal_ruby/m
 ## Usage
 
 Coming soon.
+
+## TODO
+
+- [ ] Write usage documentation
+- [ ] Define macros for writing Ruby classes
+- [ ] Handle inheritance and Crystal generics when being exposing as Ruby classes
+- [ ] Handle Crystal exceptions and rethrow them as Ruby exceptions
+- [ ] Support multiple versions of Ruby
+- [ ] Linux support
+- [ ] Handle invocations from a non-main Ruby thread
 
 ## Contributing
 
